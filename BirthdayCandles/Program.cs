@@ -4,10 +4,13 @@ Main();
 
 static void Main()
 {
+
     Console.WriteLine("Happy Birthday!");
     dialogue();
 
-    void dialogue() {
+
+    void dialogue()
+    {
         bool loopKillswitch = false;
         while (loopKillswitch == false)
         {
@@ -23,7 +26,7 @@ static void Main()
             switch (confirmation)
             {
                 case "y":
-                    Console.WriteLine("this will soon house a method");
+                    CountCandles(age);
                     break;
                 case "n":
                     Console.WriteLine("I'm Sorry, what was your age?");
@@ -36,8 +39,34 @@ static void Main()
         }
     }
 
-    //static void CountCandles(int age)
-    //{
-    //    int[] 
-    //}
+    void CountCandles(int age)
+    {
+        int[] candleSizes = new int[age];
+        int sumOfAge = age;
+        //placeholder for each pass in while loop. Holds value after number is subtracted from hold until it gets to zero
+        bool anotherKillswitch = false;
+
+        while (anotherKillswitch == false)
+        {
+            int changingAge = sumOfAge - 9;
+
+            int indexTracker = 0;
+            
+
+            if(changingAge != 0 )
+            {
+                candleSizes[indexTracker] = changingAge;
+                Console.WriteLine("On pass " + indexTracker + 1 + " we added " + changingAge);
+                indexTracker++;
+                sumOfAge = sumOfAge - 9;
+            }
+
+            if (changingAge == 0)
+            {
+                anotherKillswitch = true;
+            }
+        }
+    }
 }
+
+
