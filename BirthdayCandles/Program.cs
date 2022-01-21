@@ -60,11 +60,30 @@ static void Main()
                 indexTracker++;
                 sumOfAge = sumOfAge - 9;
             }
+             if(changingAge >= 0 && changingAge != 0)
+            {
+                bool innermostKillswitch = false;
+                int tenOrSmaller = changingAge;
+                while(innermostKillswitch == false && tenOrSmaller != 0)
+                {
+                  var random = new Random();
+                    tenOrSmaller = tenOrSmaller - random.Next(tenOrSmaller);
+                    if(tenOrSmaller <= 0 )
+                    {
+                        innermostKillswitch = true;
+                        
+                    }
+                    sumOfAge = sumOfAge - tenOrSmaller;
 
-            if (changingAge == 0)
+                }
+                anotherKillswitch = true;
+                      changingAge = 0;
+            }
+            else
             {
                 anotherKillswitch = true;
             }
+
         }
     }
 }
